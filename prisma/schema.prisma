@@ -11,9 +11,11 @@ generator client {
 }
 
 model books {
-  id Int @id @default(autoincrement())
-  title String
+  id        Int      @id @default(autoincrement())
+  title     String
   publisher String
-  pic String
-  author String[]
+  pic       String
+  author    String[]
+  createdAt DateTime?
+  deletedAt DateTime?
 }

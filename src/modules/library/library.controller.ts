@@ -15,16 +15,14 @@ import { UpdateLibraryDto } from './dto/update-library.dto';
 export class LibraryController {
   constructor(private readonly libraryService: LibraryService) {}
 
-  list = [];
   @Post()
   create(@Body() addBook: CreateLibraryDto) {
-    this.list.push(addBook);
-    return this.libraryService.create(this.list);
+    return this.libraryService.create(addBook);
   }
 
   @Get()
   findAll() {
-    return this.libraryService.findAll(this.list);
+    return this.libraryService.findAll();
   }
 
   @Get(':id')
